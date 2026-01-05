@@ -243,9 +243,8 @@ void EditorScenePostImportPlugin::_bind_methods() {
 /////////////////////////////////////////////////////////
 
 void ResourceImporterScene::_fit_primitive_to_mesh() {
-	MeshInstance3D *mesh_node = cast_to<MeshInstance3D>(SceneImportSettingsDialog::get_singleton()->get_selected_node());
 	SceneImportSettingsDialog::get_singleton()->request_generate_collider();
-	SceneImportSettingsDialog::get_singleton()->regenerate_collisions(mesh_node, true);
+	SceneImportSettingsDialog::get_singleton()->regenerate_collisions(SceneImportSettingsDialog::get_singleton()->get_selected_id(), true);
 }
 
 const String ResourceImporterScene::material_extension[3] = { ".tres", ".res", ".material" };
