@@ -770,7 +770,7 @@ const String &SceneImportSettingsDialog::get_selected_id() const {
 }
 
 void SceneImportSettingsDialog::regenerate_collisions(const String &p_node_id, bool p_fit_to_mesh) {
-	MeshInstance3D *mesh_node = cast_to<MeshInstance3D>(node_map.get(p_node_id).node);
+	MeshInstance3D *mesh_node = Object::cast_to<MeshInstance3D>(node_map.get(p_node_id).node);
 	if (!mesh_node || !node_map.has(p_node_id)) {
 		return;
 	}
